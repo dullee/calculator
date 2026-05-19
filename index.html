@@ -11,80 +11,69 @@
     <div id="textBox">
       <h1 id="inputValue">0</h1>
     </div>
-    <div id="sweetsBox">
-      <div></div>
-      <button
-        onclick="calculate('+', this)"
-        class="operatorButton circularButton"
-      >
-        +
-      </button>
-      <button
-        onclick="calculate('-', this)"
-        class="operatorButton circularButton"
-      >
-        -
-      </button>
-      <button
-        onclick="calculate('×', this)"
-        class="operatorButton circularButton"
-      >
-        ×
-      </button>
-      <button
-        onclick="calculate('÷', this)"
-        class="operatorButton circularButton"
-      >
-        ÷
-      </button>
-      <button
-        onclick="calculate('=', this)"
-        class="operatorButton circularButton"
-      >
-        =
-      </button>
-      <div>
-        <div class="numberContainer">
-          <button
-            onclick="clearEntry()"
-            id="clearButton"
-            class="circularButton"
-          >
-            C</button
-          ><button onclick="additiveInverse()" class="circularButton">
-            +/-
-          </button>
-          <button onclick="" class="numberButton circularButton">%</button>
-          <button onclick="inputNumber(1)" class="numberButton circularButton">
-            1</button
-          ><button onclick="inputNumber(2)" class="numberButton circularButton">
-            2</button
-          ><button onclick="inputNumber(3)" class="numberButton circularButton">
-            3</button
-          ><button onclick="inputNumber(4)" class="numberButton circularButton">
-            4</button
-          ><button onclick="inputNumber(5)" class="numberButton circularButton">
-            5</button
-          ><button onclick="inputNumber(6)" class="numberButton circularButton">
-            6</button
-          ><button onclick="inputNumber(7)" class="numberButton circularButton">
-            7</button
-          ><button onclick="inputNumber(8)" class="numberButton circularButton">
-            8</button
-          ><button onclick="inputNumber(9)" class="numberButton circularButton">
-            9
-          </button>
-        </div>
-        <div class="gap10 marginTop10">
-          <button
-            onclick="inputNumber(0)"
-            class="numberButton circularButton wideButton"
-          >
-            0</button
-          ><button onclick="decimal()" class="numberButton circularButton">
-            ,
-          </button>
-        </div>
+    <div>
+      <div class="numberContainer">
+        <button onclick="clearEntry()" id="clearButton" class="circularButton">
+          C</button
+        ><button onclick="additiveInverse()" class="circularButton">+/-</button
+        ><button onclick="" class="numberButton circularButton">%</button
+        ><button
+          onclick="calculate('÷', this)"
+          class="operatorButton circularButton"
+        >
+          ÷
+        </button>
+        <button onclick="inputNumber(7)" class="numberButton circularButton">
+          7</button
+        ><button onclick="inputNumber(8)" class="numberButton circularButton">
+          8</button
+        ><button onclick="inputNumber(9)" class="numberButton circularButton">
+          9
+        </button>
+        <button
+          onclick="calculate('×', this)"
+          class="operatorButton circularButton"
+        >
+          ×</button
+        ><button onclick="inputNumber(4)" class="numberButton circularButton">
+          4</button
+        ><button onclick="inputNumber(5)" class="numberButton circularButton">
+          5</button
+        ><button onclick="inputNumber(6)" class="numberButton circularButton">
+          6
+        </button>
+        <button
+          onclick="calculate('-', this)"
+          class="operatorButton circularButton"
+        >
+          -</button
+        ><button onclick="inputNumber(1)" class="numberButton circularButton">
+          1</button
+        ><button onclick="inputNumber(2)" class="numberButton circularButton">
+          2</button
+        ><button onclick="inputNumber(3)" class="numberButton circularButton">
+          3</button
+        ><button
+          onclick="calculate('+', this)"
+          class="operatorButton circularButton"
+        >
+          +
+        </button>
+      </div>
+      <div class="gap10 marginTop10">
+        <button
+          onclick="inputNumber(0)"
+          class="numberButton circularButton wideButton"
+        >
+          0</button
+        ><button onclick="decimal()" class="numberButton circularButton">
+          ,</button
+        ><button
+          onclick="calculate('=', this)"
+          class="operatorButton circularButton"
+        >
+          =
+        </button>
       </div>
     </div>
   </body>
