@@ -52,6 +52,7 @@ function clearEntry() {
   firstInput = 0;
   secondInput = 0;
   operation = null;
+  isTyping = false;
 }
 function additiveInverse() {
   inputEl.textContent = String(
@@ -61,6 +62,12 @@ function additiveInverse() {
 
 function decimal() {
   if (!inputEl.textContent.includes(",")) inputEl.textContent += ",";
+}
+function percentile() {
+  inputEl.textContent = String(parseFloat(inputEl.textContent) / 100).replace(
+    ".",
+    ",",
+  );
 }
 
 function addition() {
