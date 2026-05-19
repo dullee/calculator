@@ -39,6 +39,11 @@ h1 {
   background-color: rgb(255, 217, 187);
   color: rgb(255, 155, 5);
 }
+.numberContainer {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+}
 .numberButton {
   color: rgb(255, 255, 255);
   font-size: 50px;
@@ -58,4 +63,14 @@ h1 {
   width: 300px;
   border: 0;
   color: white;
+}
+.wideButton {
+  width: 130px !important;
+}
+.gap10 {
+  display: flex;
+  gap: 10px;
+}
+.marginTop10 {
+  margin-top: 10px;
 }

@@ -7,6 +7,7 @@ const operationsObject = {
 
 const text = document.querySelector("h2");
 let pageTitle = document.querySelector("h1");
+let isTyping = false;
 let firstInput = 0;
 let secondInput = 0;
 let operation = null;
@@ -17,24 +18,28 @@ const clearButton = document.getElementById("clearButton");
 
 function calculate(operator, button) {
   allButtons.forEach((btn) => btn.classList.remove("buttonPressed"));
-
+  isTyping = false;
   if (operator === "=" && operation) {
     const operationCheck = operationsObject[operation];
     secondInput = parseFloat(inputEl.textContent.replace(",", "."));
     console.log(operationCheck);
 
-    if (operationCheck) operationCheck();
+    if (operationCheck) {
+      operationCheck();
+    }
   } else {
     button.classList.add("buttonPressed");
     firstInput = parseFloat(inputEl.textContent.replace(",", "."));
     operation = operator;
+
     console.log("first value", firstInput, operation);
   }
 }
 function inputNumber(number) {
   clearButton.textContent = "C";
-  if (inputEl.textContent == 0 || operation) {
+  if (!isTyping) {
     inputEl.textContent = number;
+    isTyping = true;
     return;
   }
 
