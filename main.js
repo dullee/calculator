@@ -13,40 +13,68 @@ let operation = null;
 let bodyList = document.querySelector("body").classList;
 const inputEl = document.getElementById("inputValue");
 const allButtons = document.querySelectorAll("button");
+const clearButton = document.getElementById("clearButton");
 
 function calculate(operator, button) {
   allButtons.forEach((btn) => btn.classList.remove("buttonPressed"));
 
   if (operator === "=" && operation) {
     const operationCheck = operationsObject[operation];
-    secondInput = inputEl.value;
+    secondInput = parseFloat(inputEl.textContent.replace(",", "."));
     console.log(operationCheck);
+
     if (operationCheck) operationCheck();
   } else {
     button.classList.add("buttonPressed");
-    firstInput = inputEl.value;
+    firstInput = parseFloat(inputEl.textContent.replace(",", "."));
     operation = operator;
     console.log("first value", firstInput, operation);
   }
 }
+function inputNumber(number) {
+  clearButton.textContent = "C";
+  if (inputEl.textContent == 0 || operation) {
+    inputEl.textContent = number;
+    return;
+  }
+
+  inputEl.textContent += number;
+}
+function clearEntry() {
+  if (clearButton.textContent === "AC") clearButton.textContent = "C";
+  clearButton.textContent = "AC";
+  inputEl.textContent = 0;
+  firstInput = 0;
+  secondInput = 0;
+  operation = null;
+}
+function additiveInverse() {
+  inputEl.textContent = String(
+    -1 * parseFloat(inputEl.textContent.replace(",", ".")),
+  ).replace(".", ",");
+}
+
+function decimal() {
+  if (!inputEl.textContent.includes(",")) inputEl.textContent += ",";
+}
 
 function addition() {
-  inputEl.value = Number(firstInput) + Number(secondInput);
+  inputEl.textContent = String(firstInput + secondInput).replace(".", ",");
 
-  console.log("sum is", inputEl.value);
+  console.log("sum is", inputEl.textContent);
 }
 function subtraction() {
-  inputEl.value = Number(firstInput) - Number(secondInput);
+  inputEl.textContent = String(firstInput - secondInput).replace(".", ",");
 
-  console.log("difference is", inputEl.value);
+  console.log("difference is", inputEl.textContent);
 }
 function multiplication() {
-  inputEl.value = Number(firstInput) * Number(secondInput);
+  inputEl.textContent = String(firstInput * secondInput).replace(".", ",");
 
-  console.log("product is", inputEl.value);
+  console.log("product is", inputEl.textContent);
 }
 function division() {
-  inputEl.value = Number(firstInput) / Number(secondInput);
+  inputEl.textContent = String(firstInput / secondInput).replace(".", ",");
 
-  console.log("quotient is", inputEl.value);
+  console.log("quotient is", inputEl.textContent);
 }

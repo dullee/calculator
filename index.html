@@ -5,20 +5,53 @@
     <link rel="stylesheet" href="style.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Calculator</title>
   </head>
   <body>
-    <h1>Calculator!</h1>
     <div id="textBox">
-      <h2></h2>
-      <input type="number" id="inputValue" placeholder="0" />
+      <h1 id="inputValue">0</h1>
     </div>
     <div id="sweetsBox">
-      <button onclick="calculate('+', this)" class="sweetButton">+</button>
-      <button onclick="calculate('-', this)" class="sweetButton">-</button>
-      <button onclick="calculate('×', this)" class="sweetButton">×</button>
-      <button onclick="calculate('÷', this)" class="sweetButton">÷</button>
-      <button onclick="calculate('=', this)" class="sweetButton">=</button>
+      <button onclick="clearEntry()" id="clearButton" class="circularButton">
+        C</button
+      ><button onclick="additiveInverse()" class="circularButton">+/-</button>
+      <button
+        onclick="calculate('+', this)"
+        class="operatorButton circularButton"
+      >
+        +
+      </button>
+      <button
+        onclick="calculate('-', this)"
+        class="operatorButton circularButton"
+      >
+        -
+      </button>
+      <button
+        onclick="calculate('×', this)"
+        class="operatorButton circularButton"
+      >
+        ×
+      </button>
+      <button
+        onclick="calculate('÷', this)"
+        class="operatorButton circularButton"
+      >
+        ÷
+      </button>
+      <button
+        onclick="calculate('=', this)"
+        class="operatorButton circularButton"
+      >
+        =
+      </button>
+      <button onclick="decimal()" class="numberButton circularButton">,</button
+      ><button onclick="inputNumber(0)" class="numberButton circularButton">
+        0
+      </button>
+      <button onclick="inputNumber(1)" class="numberButton circularButton">
+        1
+      </button>
     </div>
   </body>
 </html>
