@@ -8,15 +8,22 @@
     <title>Calculator</title>
   </head>
   <body>
+    <img class="bgIphoneFrame" src="iphone-frame.png" alt="iphone-15-frame" />
     <div id="textBox">
       <h1 id="inputValue">0</h1>
     </div>
     <div>
       <div class="numberContainer">
-        <button onclick="clearEntry()" id="clearButton" class="circularButton">
+        <button
+          onclick="clearEntry()"
+          id="clearButton"
+          class="misButton circularButton"
+        >
           C</button
-        ><button onclick="additiveInverse()" class="circularButton">+/-</button
-        ><button onclick="percentile()" class="circularButton">%</button
+        ><button onclick="additiveInverse()" class="misButton circularButton">
+          +/-</button
+        ><button onclick="percentile()" class="misButton circularButton">
+          %</button
         ><button
           onclick="calculate('÷', this)"
           class="operatorButton circularButton"

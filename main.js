@@ -38,11 +38,14 @@ function calculate(operator, button) {
 function inputNumber(number) {
   clearButton.textContent = "C";
   if (!isTyping) {
+    console.log(inputEl.textContent.length);
     inputEl.textContent = number;
     isTyping = true;
     return;
   }
-
+  if (inputEl.textContent.length >= 9) return;
+  if (inputEl.textContent.length > 5)
+    inputEl.style.fontSize = `${60 - (inputEl.textContent.length - 5) * 4}px`;
   inputEl.textContent += number;
 }
 function clearEntry() {
@@ -53,6 +56,8 @@ function clearEntry() {
   secondInput = 0;
   operation = null;
   isTyping = false;
+  allButtons.forEach((btn) => btn.classList.remove("buttonPressed"));
+  inputEl.style.fontSize = "60px";
 }
 function additiveInverse() {
   inputEl.textContent = String(

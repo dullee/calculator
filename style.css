@@ -1,4 +1,5 @@
 body {
+  position: relative;
   background-color: rgb(0, 0, 0);
   display: flex;
   flex-direction: column;
@@ -7,7 +8,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 #textBox {
-  margin-top: 90px;
+  margin-top: 190px;
+  margin-bottom: 10px;
 }
 
 .circularButton {
@@ -16,6 +18,10 @@ body {
   border-radius: 99px;
   font-size: 25px;
   border: 0;
+  background-color: rgb(169, 169, 169);
+}
+.misButton:hover {
+  background-color: rgb(207, 207, 207) !important;
 }
 
 .operatorButton {
@@ -38,6 +44,9 @@ body {
   font-size: 30px;
   background-color: rgb(60, 60, 60);
 }
+.numberButton:hover {
+  background-color: rgb(93, 93, 93);
+}
 
 .buttonPressed {
   background-color: white;
@@ -45,17 +54,20 @@ body {
   color: rgb(255, 155, 5);
 }
 #inputValue {
+  height: 65px;
+  overflow-y: hidden;
   margin: 0;
-  padding-right: 60px;
   text-align: end;
   font-size: 60px;
   font-weight: lighter;
-  width: 300px;
+  width: 250px;
   border: 0;
   color: white;
 }
 .wideButton {
   width: 130px !important;
+  padding-left: 22px;
+  text-align: left;
 }
 .gap10 {
   display: flex;
@@ -63,4 +75,11 @@ body {
 }
 .marginTop10 {
   margin-top: 10px;
+}
+
+.bgIphoneFrame {
+  position: absolute;
+  height: 700px;
+  top: 0;
+  z-index: -1;
 }
