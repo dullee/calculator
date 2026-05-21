@@ -22,7 +22,6 @@ function calculate(operator, button) {
   if (operator === "=" && operation) {
     const operationCheck = operationsObject[operation];
     secondInput = parseFloat(inputEl.textContent.replace(",", "."));
-    console.log(operationCheck);
 
     if (operationCheck) {
       operationCheck();
@@ -32,13 +31,12 @@ function calculate(operator, button) {
     firstInput = parseFloat(inputEl.textContent.replace(",", "."));
     operation = operator;
 
-    console.log("first value", firstInput, operation);
   }
 }
+
 function inputNumber(number) {
   clearButton.textContent = "C";
   if (!isTyping) {
-    console.log(inputEl.textContent.length);
     inputEl.textContent = number;
     isTyping = true;
     return;
@@ -48,6 +46,7 @@ function inputNumber(number) {
     inputEl.style.fontSize = `${60 - (inputEl.textContent.length - 5) * 4}px`;
   inputEl.textContent += number;
 }
+
 function clearEntry() {
   if (clearButton.textContent === "AC") clearButton.textContent = "C";
   clearButton.textContent = "AC";
@@ -59,6 +58,7 @@ function clearEntry() {
   allButtons.forEach((btn) => btn.classList.remove("buttonPressed"));
   inputEl.style.fontSize = "60px";
 }
+
 function additiveInverse() {
   inputEl.textContent = String(
     -1 * parseFloat(inputEl.textContent.replace(",", ".")),
@@ -68,6 +68,7 @@ function additiveInverse() {
 function decimal() {
   if (!inputEl.textContent.includes(",")) inputEl.textContent += ",";
 }
+
 function percentile() {
   inputEl.textContent = String(parseFloat(inputEl.textContent) / 100).replace(
     ".",
@@ -77,21 +78,13 @@ function percentile() {
 
 function addition() {
   inputEl.textContent = String(firstInput + secondInput).replace(".", ",");
-
-  console.log("sum is", inputEl.textContent);
 }
 function subtraction() {
   inputEl.textContent = String(firstInput - secondInput).replace(".", ",");
-
-  console.log("difference is", inputEl.textContent);
 }
 function multiplication() {
   inputEl.textContent = String(firstInput * secondInput).replace(".", ",");
-
-  console.log("product is", inputEl.textContent);
 }
 function division() {
   inputEl.textContent = String(firstInput / secondInput).replace(".", ",");
-
-  console.log("quotient is", inputEl.textContent);
 }
